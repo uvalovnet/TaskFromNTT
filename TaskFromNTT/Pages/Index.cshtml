@@ -1,0 +1,165 @@
+﻿@page
+@{
+    ViewData["Title"] = "";
+}
+<p>
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#requestType1" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Получить все записи
+    </a>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#requestType2" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Получить выборку
+    </a>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#requestType3" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Создать запись
+    </a>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#requestType4" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Обновить запись
+    </a>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#requestType5" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Удалить запись
+    </a>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#requestType6" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Сделать Join таблицам
+    </a>
+        </div>
+    </div>
+</p>
+
+
+<div class="collapse" id="requestType1">
+    <div class="shadow p-3 mb-5 bg-light rounded">
+        <div class="row">
+            <div class="col-sm-1">
+            <select class="custom-select" id="table1">
+                <option value="1" selected>Categories</option>
+                <option value="2">Products</option>
+            </select>
+            </div>
+            <div class="col-sm-1">
+                <button id="getAllItems" class="btn btn-primary">Отправить запрос</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="collapse" id="requestType2">
+    <div class="shadow p-3 mb-5 bg-light rounded">
+        <div class="row">
+            <div class="col-sm-1">
+                <select class="custom-select" id="table2">
+                    <option value="1" selected>Categories</option>
+                    <option value="2">Products</option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+            <form>
+                <div class="form-group">
+                        <input type="number" class="form-control" id="start" placeholder="С какого id" value="">
+                </div>
+                <div class="form-group">
+                        <input type="number" class="form-control" id="end" placeholder="Сколько строк" value="">
+                </div>
+            </form>
+            </div>
+            <div class="col-sm-1">
+                <button id="getSelectionData" class="btn btn-primary">Отправить запрос</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="collapse" id="requestType3">
+    <div class="shadow p-3 mb-5 bg-light rounded">
+        <div class="row">
+            <div class="col-sm-1">
+                <select class="custom-select" id="table3">
+                    <option value="1" selected>Categories</option>
+                    <option value="2">Products</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <input class="form-control form-control-lg" type="text" id="Name3" placeholder="Name" value="">
+            </div>
+            <div class="col-sm-2">
+                <input class="form-control form-control-lg" type="number" id="Category3" placeholder="Category">
+            </div>
+            <div class="col-sm-2">
+                <input class="form-control form-control-lg" type="number" id="Price3" placeholder="Price">
+            </div>
+            <div class="col-sm-2">
+                <input class="form-control form-control-lg" type="number" id="Quantity3" placeholder="Quantity">
+            </div>
+            <div class="col-sm-1">
+                <button id="add" class="btn btn-primary">Отправить запрос</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="collapse" id="requestType4">
+    <div class="shadow p-3 mb-5 bg-light rounded">
+        <div class="row">
+            <div class="col-sm-2">
+                <input class="form-control form-control-lg" type="number" id="Id4" placeholder="Id">
+            </div>
+            <div class="col-sm-2">
+                <input class="form-control form-control-lg" type="text" id="Name4" placeholder="Name">
+            </div>
+            <div class="col-sm-2">
+                <input class="form-control form-control-lg" type="number" id="Category4" placeholder="Category">
+            </div>
+            <div class="col-sm-2">
+                <input class="form-control form-control-lg" type="number" id="Price4" placeholder="Price">
+            </div>
+            <div class="col-sm-2">
+                <input class="form-control form-control-lg" type="number" id="Quantity4" placeholder="Quantity">
+            </div>
+            <div class="col-sm-1">
+                <button id="update" class="btn btn-primary">Отправить запрос</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="collapse" id="requestType5">
+    <div class="shadow p-3 mb-5 bg-light rounded">
+        <div class="row">
+            <div class="col-sm-1">
+                <select class="custom-select" id="table5">
+                    <option value="1" selected>Categories</option>
+                    <option value="2">Products</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <input class="form-control form-control-lg" type="number" id="Id5" placeholder="Id">
+            </div>
+            <div class="col-sm-1">
+                <button id="delete" class="btn btn-primary">Отправить запрос</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="collapse" id="requestType6">
+    <div class="shadow p-3 mb-5 bg-light rounded">
+        <div class="row">
+            <div class="col-sm-3">
+                <button id="join" class="btn btn-primary">Отправить запрос</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#expandTable" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Развернуть таблицу
+    </a>
+</div>
+<div class="collapse" id="expandTable">
+    <div class="shadow p-3 mb-5 bg-light rounded">
+        <table class="table table-bordered" id="viewTable">
+
+        </table>
+    </div>
+</div>
+
+
+
+
